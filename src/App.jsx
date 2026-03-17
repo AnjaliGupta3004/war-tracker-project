@@ -31,9 +31,9 @@ const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
   useEffect(() => {
     const fetchWarNews = async () => {
       try {
-    const response = await fetch(
-  `https://gnews.io/api/v4/search?q=war OR conflict&lang=en&apikey=${API_KEY}`
-);
+        const response = await fetch(
+          `https://newsapi.org/v2/everything?q=(war OR conflict OR military OR battle)&language=en&sortBy=publishedAt&pageSize=20&apiKey=${API_KEY}`
+        );
         const data = await response.json();
         
         if (data.articles) {
