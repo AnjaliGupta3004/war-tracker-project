@@ -13,12 +13,12 @@ function App() {
   // const API_KEY = "7ceaad52478b4437a33db8c0de84a238"; 
 
   //https://gnews.io/dashboard {from here i get the api key}
-const API_KEY = "dc60a3f1f342fe3adc5143876f01270a";
+  const API_KEY = "dc60a3f1f342fe3adc5143876f01270a";
   // Function to assign severity based on keywords
   const getSeverity = (title) => {
     const highIntensityKeywords = ["attack", "strike", "bomb", "casualty", "offensive", "battle", "clash", "nuclear"];
     const diplomaticKeywords = ["ceasefire", "negotiation", "talks", "peace", "agreement", "aid", "dialogue"];
-    
+
     title = title.toLowerCase();
 
     if (highIntensityKeywords.some(keyword => title.includes(keyword))) {
@@ -35,22 +35,22 @@ const API_KEY = "dc60a3f1f342fe3adc5143876f01270a";
       try {
 
         //https://gnews.io/dashboard
-   const response = await fetch(
+        const response = await fetch(
           `https://gnews.io/api/v4/search?q=war OR conflict OR military&lang=en&max=10&apikey=${API_KEY}`
-        );  
+        );
         const data = await response.json();
-        
+
         if (data.articles) {
-     const formattedData = data.articles.map((article, index) => ({
-  id: index + 1,
-  location: article.source.name,
-  description: article.title,
-  severity: getSeverity(article.title),
-  url: article.url, // <--- Yeh line add karein
-  date: new Date(article.publishedAt).toLocaleDateString('en-GB', {
-    day: '2-digit', month: 'short', year: 'numeric'
-  })
-}));
+          const formattedData = data.articles.map((article, index) => ({
+            id: index + 1,
+            location: article.source.name,
+            description: article.title,
+            severity: getSeverity(article.title),
+            url: article.url, // <--- Yeh line add karein
+            date: new Date(article.publishedAt).toLocaleDateString('en-GB', {
+              day: '2-digit', month: 'short', year: 'numeric'
+            })
+          }));
           setWarData(formattedData);
         }
         setLoading(false);
@@ -65,11 +65,11 @@ const API_KEY = "dc60a3f1f342fe3adc5143876f01270a";
 
   // Advanced Filter Logic
   const filteredData = warData.filter(item => {
-    const matchesSearch = 
+    const matchesSearch =
       item.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
       item.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesSeverity = severityFilter === "All" || item.severity === severityFilter;
-    
+
     return matchesSearch && matchesSeverity;
   });
 
@@ -77,18 +77,18 @@ const API_KEY = "dc60a3f1f342fe3adc5143876f01270a";
     <div className="min-h-screen bg-[#020617] text-slate-200 selection:bg-red-500 font-sans">
       <Navbar />
       <Ticker news={warData} /> {/* Ticker added below Navbar */}
-      
+
       <div className="max-w-7xl mx-auto py-12 px-6">
         {/* Intelligence Controls */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6 bg-[#0f172a] p-6 border border-slate-800 rounded-none shadow-2xl">
           <div className="w-full md:w-2/3 flex gap-4">
-            <input 
-              type="text" 
-              placeholder="FILTER BY REGION OR KEYWORD..." 
+            <input
+              type="text"
+              placeholder="FILTER BY REGION OR KEYWORD..."
               className="flex-1 bg-[#1e293b] border border-slate-700 p-3 rounded-none text-xs focus:outline-none focus:border-red-600 transition-all font-mono uppercase"
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <select 
+            <select
               className="bg-[#1e293b] border border-slate-700 p-3 rounded-none text-xs focus:outline-none focus:border-red-600 font-mono uppercase text-slate-400"
               onChange={(e) => setSeverityFilter(e.target.value)}
             >
