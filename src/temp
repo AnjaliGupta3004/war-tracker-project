@@ -1,0 +1,58 @@
+Project Flow
+
+Is project mein kya-kya hai aur ye kaise kaam karta hai, main easy language mein explain karta hoon (aap ise apne viva ya interview mein bhi bol sakti hain):
+
+1. Real-time Intelligence (The News Engine)
+Project ka main kaam hai duniya bhar se "War" aur "Conflict" ki news nikalna.
+
+Kaise kaam karta hai: Humne GNews API ka use kiya hai. Jaise hi dashboard load hota hai, ye API duniya bhar ke news servers se connect karti hai.
+
+Query Logic: Humne search query mein war OR conflict OR military dala hai taaki sirf relevant news hi aaye.
+
+2. Severity Algorithm (The Brain)
+Ye project sirf news dikhata nahi hai, balki use analyze bhi karta hai.
+
+High Intensity: Agar title mein "attack", "bomb", ya "military" jaise words hain, toh app use Red label deta hai.
+
+Diplomatic: Agar "peace", "talks", ya "aid" jaise words hain, toh use Blue label milta hai.
+
+Monitoring: Baaki normal news ko monitor state mein rakhta hai.
+
+3. Visual Intelligence (The World Map)
+Aapne jo react-simple-maps use kiya hai, wo project ko professional look deta hai.
+
+Global View: Map par Red dots (Markers) dikhate hain ki "Critical Zones" kahan hain.
+
+Interactive Markers: Ye markers animate (pulse) karte hain, jo ek war-room dashboard wali feel dete hain.
+
+4. Data Analytics (The Charts)
+Humne Recharts library use ki hai taaki data sirf list mein na dikhe, balki graphical format mein bhi ho.
+
+Pie Chart: Ye dikhata hai ki total news mein se kitne percent news "High Intensity" wali hain.
+
+Bar Chart: Ye severity levels ka comparison dikhata hai.
+
+5. Secure Vault (LocalStorage Persistence)
+Ye ek professional feature hai jisme user intelligence reports ko "Save" kar sakta hai.
+
+Logic: Jab aap "Save" button par click karti hain, toh wo report browser ke localStorage mein save ho jati hai.
+
+Benefit: Agar aap page refresh bhi karein, toh aapka "Vault" khali nahi hoga. Ye data browser mein encrypted format (JSON string) mein rehta hai.
+
+6. UI/UX (Cyber-Security Theme)
+Project ka design "Military Grade" theme par based hai:
+
+Tailwind CSS: Dark mode (bg-[#020617]), neon borders, aur monochromatic fonts ka use kiya gaya hai.
+
+Ticker: Upar ek moving news ticker hai jo live update ki feel deta hai.
+
+Toaster Alerts: react-hot-toast ka use kiya hai critical alerts dikhane ke liye.
+
+Tech Stack Summary:
+
+Frontend: React (Vite)
+Styling: Tailwind CSS
+Charts: Recharts
+Maps: React-simple-maps
+API: GNews API
+Notifications: React Hot Toast

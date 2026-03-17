@@ -14,7 +14,7 @@
 ---
 
 ## 🚀 Live Demo
-Check out the live application: [**View Live Project on Vercel**](https://war-tracker-project.vercel.app)
+Check out the live application: [**View Live Project on Vercel**](https://war-tracker-project-ia8m-git-main-anjaligupta3004s-projects.vercel.app/)
 
 ## ✨ Key Features
 - **📡 Live Intelligence Feed:** Fetches real-time headlines using the GNews API with optimized asynchronous data handling.
