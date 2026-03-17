@@ -11,6 +11,8 @@ function App() {
 
   // YOUR API KEY HERE
   // const API_KEY = "7ceaad52478b4437a33db8c0de84a238"; 
+
+  //https://gnews.io/dashboard {from here i get the api key}
 const API_KEY = "dc60a3f1f342fe3adc5143876f01270a";
   // Function to assign severity based on keywords
   const getSeverity = (title) => {
@@ -31,21 +33,24 @@ const API_KEY = "dc60a3f1f342fe3adc5143876f01270a";
   useEffect(() => {
     const fetchWarNews = async () => {
       try {
+
+        //https://gnews.io/dashboard
    const response = await fetch(
           `https://gnews.io/api/v4/search?q=war OR conflict OR military&lang=en&max=10&apikey=${API_KEY}`
         );  
         const data = await response.json();
         
         if (data.articles) {
-          const formattedData = data.articles.map((article, index) => ({
-            id: index + 1,
-            location: article.source.name || "Global News",
-            description: article.title,
-            severity: getSeverity(article.title), // Sentiment logic use ho raha hai
-            date: new Date(article.publishedAt).toLocaleDateString('en-GB', {
-              day: '2-digit', month: 'short', year: 'numeric'
-            })
-          }));
+     const formattedData = data.articles.map((article, index) => ({
+  id: index + 1,
+  location: article.source.name,
+  description: article.title,
+  severity: getSeverity(article.title),
+  url: article.url, // <--- Yeh line add karein
+  date: new Date(article.publishedAt).toLocaleDateString('en-GB', {
+    day: '2-digit', month: 'short', year: 'numeric'
+  })
+}));
           setWarData(formattedData);
         }
         setLoading(false);
