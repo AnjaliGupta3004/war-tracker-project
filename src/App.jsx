@@ -13,7 +13,7 @@ function App() {
   // const API_KEY = "7ceaad52478b4437a33db8c0de84a238"; 
 
   //https://gnews.io/dashboard {from here i get the api key}
-  const API_KEY = "dc60a3f1f342fe3adc5143876f01270a";
+const API_KEY = import.meta.env.VITE_GNEWS_API_KEY;
   // Function to assign severity based on keywords
   const getSeverity = (title) => {
     const highIntensityKeywords = ["attack", "strike", "bomb", "casualty", "offensive", "battle", "clash", "nuclear"];
