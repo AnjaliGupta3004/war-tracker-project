@@ -1,16 +1,36 @@
-# React + Vite
+# 🛡️ Global Sentinel - Real-Time War Intelligence Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Global Sentinel** is a professional-grade intelligence dashboard built to track global conflicts and military news in real-time. It leverages modern web technologies to provide a clean, high-intensity interface for monitoring global frequencies.
 
-Currently, two official plugins are available:
+## 📸 Project Live Demo Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<div align="center">
+  <img src="./src/assets/demo-preview.png" alt="Global Sentinel Dashboard Live Preview" width="100%" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.5);" />
+  <p><em>Snapshot of the Live Dashboard featuring real-time intelligence feed and sentiment analysis.</em></p>
+</div>
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Live Demo
+Check out the live application: [**View Live Project on Vercel**](https://war-tracker-project.vercel.app)
 
-## Expanding the ESLint configuration
+## ✨ Key Features
+- **📡 Live Intelligence Feed:** Fetches real-time headlines using the GNews API with asynchronous data handling.
+- **🧠 Sentiment-Based Categorization:** Custom logic scans headlines to automatically assign severity levels (e.g., *High Intensity*, *Monitoring*, *Diplomatic*).
+- **🔗 Direct Intelligence Access:** Every report card is interactive, allowing users to view the full original article source with proper security attributes.
+- **🛑 Breaking Intel Ticker:** Integrated a dynamic top banner displaying the latest critical intelligence headlines.
+- **🎨 Modern Military Aesthetic:** Custom dark-mode UI built with **Tailwind CSS v4** with glassmorphism effects.
+- **📱 Fully Responsive:** Optimized for consistent viewing on mobile, tablet, and desktop devices.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- **Frontend:** React.js (Vite)
+- **Styling:** Tailwind CSS v4
+- **API:** GNews API
+- **Deployment:** Vercel
+- **Version Control:** Git & GitHub
+
+## ⚙️ Installation & Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/AnjaliGupta3004/war-tracker-project.git](https://github.com/AnjaliGupta3004/war-tracker-project.git)
