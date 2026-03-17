@@ -11,7 +11,7 @@ function App() {
 
   // YOUR API KEY HERE
   // const API_KEY = "7ceaad52478b4437a33db8c0de84a238"; 
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
+const API_KEY = "dc60a3f1f342fe3adc5143876f01270a";
   // Function to assign severity based on keywords
   const getSeverity = (title) => {
     const highIntensityKeywords = ["attack", "strike", "bomb", "casualty", "offensive", "battle", "clash", "nuclear"];
@@ -31,9 +31,9 @@ const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
   useEffect(() => {
     const fetchWarNews = async () => {
       try {
-        const response = await fetch(
-          `https://newsapi.org/v2/everything?q=(war OR conflict OR military OR battle)&language=en&sortBy=publishedAt&pageSize=20&apiKey=${API_KEY}`
-        );
+   const response = await fetch(
+          `https://gnews.io/api/v4/search?q=war OR conflict OR military&lang=en&max=10&apikey=${API_KEY}`
+        );  
         const data = await response.json();
         
         if (data.articles) {
