@@ -15,7 +15,7 @@ const WorldMap = () => {
     <div className="bg-[#0f172a] border border-slate-800 p-4 mb-12 shadow-2xl overflow-hidden relative">
       <div className="flex justify-between items-center mb-4 border-b border-slate-800 pb-2">
         <h2 className="text-[10px] font-black uppercase tracking-[0.3em] text-red-500 animate-pulse">
-          🛰️ Global Satellite View: Active Theaters
+          Global Satellite View: Active Theaters
         </h2>
         <span className="text-[10px] text-slate-500 font-mono font-bold uppercase">Source: Sentinel-1</span>
       </div>

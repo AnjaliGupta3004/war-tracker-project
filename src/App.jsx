@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import ConflictCard from './components/ConflictCard';
 import Ticker from './components/Ticker';
-import WorldMap from './components/WorldMap'; 
-import Analytics from './components/Analytics'; 
+import WorldMap from './components/WorldMap';
+import Analytics from './components/Analytics';
+import Chatbot from './components/Chatbot';
+
 import { Toaster, toast } from 'react-hot-toast';
 
 function App() {
@@ -11,7 +13,7 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [severityFilter, setSeverityFilter] = useState("All");
-  
+
   // Phase 2 Safety: LocalStorage error prevention
   const [savedReports, setSavedReports] = useState(() => {
     try {
@@ -56,11 +58,11 @@ function App() {
             description: article.title || "Intelligence Report Missing",
             severity: getSeverity(article.title),
             url: article.url || "#",
-            date: article.publishedAt 
+            date: article.publishedAt
               ? new Date(article.publishedAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })
               : "N/A"
           }));
-          
+
           setWarData(formattedData);
 
           if (formattedData.some(item => item.severity === "High Intensity")) {
@@ -97,7 +99,7 @@ function App() {
     const loc = (item.location || "").toLowerCase();
     const desc = (item.description || "").toLowerCase();
     const query = (searchTerm || "").toLowerCase();
-    
+
     const matchesSearch = loc.includes(query) || desc.includes(query);
     const matchesSeverity = severityFilter === "All" || item.severity === severityFilter;
     return matchesSearch && matchesSeverity;
@@ -110,12 +112,12 @@ function App() {
       <Ticker news={warData || []} />
 
       <div className="max-w-7xl mx-auto py-8 px-6">
-        
+
         {/* Step 1: Wrap Map/Charts in extra safety */}
         <div className="space-y-8 mb-12">
-           <WorldMap />
-           {!loading && warData.length > 0 && <Analytics data={warData} />}
-        </div> 
+          <WorldMap />
+          {!loading && warData.length > 0 && <Analytics data={warData} />}
+        </div>
 
         {/* Intelligence Controls - Same as before */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6 bg-[#0f172a] p-6 border border-slate-800 shadow-2xl relative overflow-hidden">
@@ -154,10 +156,10 @@ function App() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredData.length > 0 ? (
               filteredData.map(item => (
-                <ConflictCard 
-                  key={item.id} 
-                  data={item} 
-                  onSave={() => handleSaveReport(item)} 
+                <ConflictCard
+                  key={item.id}
+                  data={item}
+                  onSave={() => handleSaveReport(item)}
                 />
               ))
             ) : (
@@ -168,12 +170,17 @@ function App() {
           </div>
         )}
       </div>
-      
+
       <footer className="max-w-7xl mx-auto px-6 py-8 border-t border-slate-900 flex justify-between items-center text-[10px] text-slate-600 font-mono uppercase tracking-widest">
         <span>Sentinel v2.0 // Active Tracking</span>
         <span>Secure Vault Storage: {savedReports.length} Files</span>
       </footer>
+
+      {/* 🚀 Yahan Chatbot add karein */}
+      <Chatbot />
     </div>
+
+
   );
 }
 

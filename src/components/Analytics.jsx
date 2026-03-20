@@ -66,7 +66,7 @@ const Analytics = ({ data = [] }) => {
         <h3 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-6 border-b border-slate-800 pb-2">
           📈 Signal Strength by Severity
         </h3>
-        <div className="h-[250px] w-full">
+  <div style={{ width: '100%', height: '350px', minHeight: '350px' }}>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={stats}>
               <XAxis 
