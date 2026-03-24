@@ -8,6 +8,7 @@ import Chatbot from './components/Chatbot';
 
 import { Toaster, toast } from 'react-hot-toast';
 
+
 function App() {
   const [warData, setWarData] = useState([]);
   const [loading, setLoading] = useState(true);
