@@ -17,10 +17,10 @@ const IntelReader = ({ article, onBack }) => {
         <iframe src={article.url} className="w-full h-full border-none" title="Intel Feed" />
         <div className="absolute inset-0 -z-10 bg-slate-900 flex items-center justify-center text-slate-500 font-mono text-xs uppercase p-10 text-center">
            Encryption Blocked View. Use 'Open Original' to bypass firewall.
+          
         </div>
       </div>
     </div>
   );
 };
-
 export default IntelReader;

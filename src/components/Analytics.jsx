@@ -91,6 +91,7 @@ const Analytics = ({ data = [] }) => {
       </div>
     </div>
   );
+  
 };
 
 export default Analytics;
