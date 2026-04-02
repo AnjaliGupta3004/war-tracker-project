@@ -83,15 +83,17 @@ const Analytics = ({ data = [] }) => {
               <Bar dataKey="value" radius={[4, 4, 0, 0]}>
                 {stats.map((entry, index) => (
                   <Cell key={`cell-${index}`} fill={entry.color} />
+                  
                 ))}
               </Bar>
             </BarChart>
+
           </ResponsiveContainer>
         </div>
       </div>
     </div>
   );
-  
+
 };
 
 export default Analytics;

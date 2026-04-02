@@ -13,9 +13,11 @@ function App() {
   const [severityFilter, setSeverityFilter] = useState("All");
   const [selectedArticle, setSelectedArticle] = useState(null);
 
+
   const [savedReports, setSavedReports] = useState(() => {
     try {
       const saved = localStorage.getItem("sentinel_vault");
+
       return saved ? JSON.parse(saved) : [];
     } catch (e) { return []; }
   });
@@ -71,6 +73,7 @@ function App() {
     return matchesSearch && matchesSeverity;
   });
 
+
   return (
     <div className="min-h-screen bg-[#020617] text-slate-200 font-sans pb-12">
       <Toaster position="top-right" />
@@ -80,6 +83,7 @@ function App() {
       <main className="max-w-7xl mx-auto py-8 px-6">
         {!selectedArticle ? (
           <Dashboard 
+          
             loading={loading}
             warData={warData}
             filteredData={filteredData}
