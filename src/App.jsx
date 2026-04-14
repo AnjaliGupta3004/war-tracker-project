@@ -67,6 +67,7 @@ function App() {
   };
 
   const filteredData = (warData || []).filter(item => {
+
     const matchesSearch = item.location.toLowerCase().includes(searchTerm.toLowerCase()) || 
                           item.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesSeverity = severityFilter === "All" || item.severity === severityFilter;
@@ -81,6 +82,7 @@ function App() {
       <Ticker news={warData || []} />
 
       <main className="max-w-7xl mx-auto py-8 px-6">
+        
         {!selectedArticle ? (
           <Dashboard 
           

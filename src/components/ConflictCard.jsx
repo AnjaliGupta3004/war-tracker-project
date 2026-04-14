@@ -6,10 +6,12 @@ export default function ConflictCard({ data, onSave }) {
     'Monitoring': 'bg-orange-500 text-black'
   };
 
+
   return (
     <div className="flex flex-col h-full bg-[#1e293b] border border-slate-700/50 rounded-none relative overflow-hidden group hover:border-red-500/50 transition-all shadow-2xl">
       {/* Top Corner Decorative Element */}
       <div className="absolute top-0 right-0 w-16 h-16 bg-red-600/10 rotate-45 translate-x-8 -translate-y-8"></div>
+      
       
       <div className="p-6 flex-grow">
         <div className="flex justify-between items-center mb-6">
