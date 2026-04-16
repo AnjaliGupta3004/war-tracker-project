@@ -39,6 +39,13 @@ const Dashboard = ({ loading, filteredData, warData, searchTerm, setSearchTerm, 
       </div>
 
       {/* Reports Grid */}
+
+
+
+
+
+
+
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[...Array(6)].map((_, i) => (
@@ -49,6 +56,7 @@ const Dashboard = ({ loading, filteredData, warData, searchTerm, setSearchTerm, 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredData.length > 0 ? (
             filteredData.map(item => (
+
               <div key={item.id} onClick={() => onSelect(item)} className="cursor-pointer group relative">
                 <ConflictCard data={item} onSave={(e) => { e.stopPropagation(); onSave(item); }} />
                 <div className="absolute inset-0 bg-red-600/5 opacity-0 group-hover:opacity-100 pointer-events-none transition-all border border-red-600/20"></div>
@@ -64,5 +72,9 @@ const Dashboard = ({ loading, filteredData, warData, searchTerm, setSearchTerm, 
     </div>
   );
 };
+
+
+
+
 
 export default Dashboard;
