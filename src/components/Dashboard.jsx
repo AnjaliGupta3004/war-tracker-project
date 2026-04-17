@@ -67,6 +67,10 @@ const Dashboard = ({ loading, filteredData, warData, searchTerm, setSearchTerm, 
               No Intelligence Matches the Filter
             </div>
           )}
+
+
+
+      
         </div>
       )}
     </div>
