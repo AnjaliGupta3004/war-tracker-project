@@ -11,5 +11,6 @@ export default function Ticker({ news }) {
         BREAKING INTEL: {tickerText || "Scanning for updates..."}
       </div>
     </div>
+    
   );
 }

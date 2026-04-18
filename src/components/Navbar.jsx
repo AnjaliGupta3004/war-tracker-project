@@ -11,6 +11,7 @@ export default function Navbar() {
           <a href="#" className="text-red-500 border border-red-500 px-4 py-1 rounded-sm hover:bg-red-500 hover:text-white transition-all">Emergency Alerts</a>
         </div>
       </div>
+      
     </nav>
 
     

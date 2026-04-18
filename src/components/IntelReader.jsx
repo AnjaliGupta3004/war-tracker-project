@@ -12,6 +12,7 @@ const IntelReader = ({ article, onBack }) => {
           <button onClick={onBack} className="border border-slate-700 text-white px-4 py-2 text-[10px] font-black uppercase hover:bg-slate-800">Back</button>
           <a href={article.url} target="_blank" rel="noreferrer" className="bg-red-600 text-white px-4 py-2 text-[10px] font-black uppercase">Open Original ↗</a>
         </div>
+        
       </div>
       <div className="flex-1 bg-white relative">
         <iframe src={article.url} className="w-full h-full border-none" title="Intel Feed" />
