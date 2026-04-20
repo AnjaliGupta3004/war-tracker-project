@@ -72,6 +72,7 @@ const Dashboard = ({ loading, filteredData, warData, searchTerm, setSearchTerm, 
 
       
         </div>
+        
       )}
     </div>
   );
