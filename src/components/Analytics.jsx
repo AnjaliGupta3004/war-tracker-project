@@ -85,6 +85,7 @@ const Analytics = ({ data = [] }) => {
                   <Cell key={`cell-${index}`} fill={entry.color} />
                   
                 ))}
+                
               </Bar>
             </BarChart>
 

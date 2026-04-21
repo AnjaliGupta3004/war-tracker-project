@@ -20,6 +20,7 @@ const Chatbot = () => {
 
     const userMessage = { role: "user", text: input };
     setMessages(prev => [...prev, userMessage]);
+    
     const currentInput = input;
     setInput("");
     setLoading(true);
